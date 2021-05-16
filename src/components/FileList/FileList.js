@@ -1,10 +1,11 @@
 import { Badge } from "@material-ui/core";
 import { img_300, unavailable } from "../../config/config";
+import TransitionsModal from "../ContentModal/ContentModal";
 import { ContainerMedia, Poster, Subtitle, Title } from "./FileListStyled";
 
 const FileList = ({ id, poster, title, date, media_type, vote_average }) => {
   return (
-    <ContainerMedia>
+    <TransitionsModal media_type={media_type} id={id}>
       <Badge
         badgeContent={vote_average}
         color={vote_average > 6 ? "primary" : "secondary"}
@@ -15,7 +16,7 @@ const FileList = ({ id, poster, title, date, media_type, vote_average }) => {
         <Subtitle>{media_type === "tv" ? "TV Series" : "Movies"}</Subtitle>
         <Subtitle className="subTitle">{date}</Subtitle>
       </Subtitle>
-    </ContainerMedia>
+    </TransitionsModal>
   );
 };
 

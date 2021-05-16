@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import FileList from "../../components/FileList/FileList";
 import CustomPagination from "../../components/Pagination/CustomPagination";
-import { ContainerTrending } from "../Trending/TrendingStyled";
+import { ContainerGeneralPages } from "../GeneralStyledComponents/GeneralStyledPages";
 
 const Series = () => {
   const [page, setPage] = useState(1);
@@ -25,7 +25,7 @@ const Series = () => {
   return (
     <div>
       <span className="pageTitle">TV Series</span>
-      <ContainerTrending className="trending">
+      <ContainerGeneralPages className="trending">
         {content &&
           content.map((contentFile) => (
             <FileList
@@ -34,11 +34,11 @@ const Series = () => {
               poster={contentFile.poster_path}
               title={contentFile.title || contentFile.name}
               date={contentFile.first_air_date || contentFile.release_date}
-              media_type="movie"
+              media_type="tv"
               vote_average={contentFile.vote_average}
             />
           ))}
-      </ContainerTrending>
+      </ContainerGeneralPages>
       {numOfPages > 1 && (
         <CustomPagination setPage={setPage} numOfPages={numOfPages} />
       )}

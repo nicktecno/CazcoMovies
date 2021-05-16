@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import FileList from "../../components/FileList/FileList";
-import { ContainerTrending } from "./TrendingStyled";
+import { ContainerGeneralPages } from "../GeneralStyledComponents/GeneralStyledPages";
 
 const Trending = () => {
   const [content, setContent] = useState([]);
@@ -11,7 +11,7 @@ const Trending = () => {
       `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}`
     );
     const results = data.results;
-    const resultsFormatted = results.splice(0, 9);
+    const resultsFormatted = results.splice(0, 10);
     console.log(resultsFormatted);
 
     setContent(resultsFormatted);
@@ -24,7 +24,7 @@ const Trending = () => {
   return (
     <div>
       <span className="pageTitle">Top 10 Trending</span>
-      <ContainerTrending className="trending">
+      <ContainerGeneralPages className="trending">
         {content &&
           content.map((contentFile) => (
             <FileList
@@ -37,7 +37,7 @@ const Trending = () => {
               vote_average={contentFile.vote_average}
             />
           ))}
-      </ContainerTrending>
+      </ContainerGeneralPages>
     </div>
   );
 };

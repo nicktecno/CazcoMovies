@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerTrending = styled.div`
+export const ContainerGeneralPages = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
