@@ -19,6 +19,3 @@ Em todas as telas se consegue ver a descrição de cada filme clicando no card c
 ReactJS, Styled Components, Material UI, React-Router-Dom e Axios,
 
 
-### Observação
-
-O arquivo .env não foi retirado do Commit porque ele não representa falha de segurança e sua presença facilita a iniciação do app sem mais detalhamentos.
