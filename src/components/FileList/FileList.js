@@ -1,7 +1,7 @@
 import { Badge } from "@material-ui/core";
 import { img_300, unavailable } from "../../config/config";
 import TransitionsModal from "../ContentModal/ContentModal";
-import { ContainerMedia, Poster, Subtitle, Title } from "./FileListStyled";
+import { Poster, Subtitle, Title } from "./FileListStyled";
 
 const FileList = ({ id, poster, title, date, media_type, vote_average }) => {
   return (
